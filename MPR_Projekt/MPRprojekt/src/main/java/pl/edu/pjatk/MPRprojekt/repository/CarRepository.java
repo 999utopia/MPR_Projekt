@@ -10,4 +10,5 @@ import java.util.List;
 //@Component
 public interface CarRepository extends CrudRepository<Car, Long> {
     public List<Car> findByModel(String model);
+    public List<Car> findByIndex(int index);
 }

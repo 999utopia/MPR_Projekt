@@ -2,6 +2,8 @@ package pl.edu.pjatk.MPRprojekt.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import pl.edu.pjatk.MPRprojekt.exception.CarAlreadyExists;
+import pl.edu.pjatk.MPRprojekt.exception.CarNotFoundException;
 import pl.edu.pjatk.MPRprojekt.model.Car;
 import pl.edu.pjatk.MPRprojekt.repository.CarRepository;
 
@@ -34,22 +36,40 @@ public class CarService {
      }
 
      public void addCar(Car car) {
-         carRepository.save(car);
+        car.setIndex();
+        List<Car> carIndexList = this.carRepository.findByIndex(car.getIndex());
+        if (!carIndexList.isEmpty()) {
+            throw new CarAlreadyExists();
+        }
+        carRepository.save(car);
      }
 
      public void deleteCarById(Long id) {
          carRepository.deleteById(id);
      }
 
-     public Optional<Car> getCarById(Long id) {
-         return carRepository.findById(id);
+     public Car getCarById(Long id) {
+        Optional<Car> car = this.carRepository.findById(id);
+
+        if (car.isEmpty()) {
+            throw new CarNotFoundException();
+        }
+         return car.get();
+     }
+
+     public List<Car> getCarByIndex(int index) {
+        List<Car> cars = this.carRepository.findByIndex(index);
+        if (cars.isEmpty()) {
+            throw new CarNotFoundException();
+        }
+        return cars;
      }
 
      public void updateCar(Car updatedCar) {
          carRepository.findById(updatedCar.getId()).ifPresent(c -> {
              c.setModel(updatedCar.getModel());
              c.setBrand(updatedCar.getBrand());
-             c.setIndex(updatedCar.getBrand(), updatedCar.getModel());
+             c.setIndex();
              carRepository.save(c);
          });
      }
