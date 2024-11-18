@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="pl.edu.pjatk.MPRprojekt.service.CarServiceTest" tests="3" skipped="0" failures="3" errors="0" timestamp="2024-11-18T18:27:32" hostname="DESKTOP-6P4U75M" time="1.817">
+  <properties/>
+  <testcase name="testAddCarThrowsExceptionWhenCarExists()" classname="pl.edu.pjatk.MPRprojekt.service.CarServiceTest" time="1.808">
+    <failure message="java.lang.NullPointerException: Cannot invoke &quot;String.length()&quot; because &quot;this.model&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;String.length()&quot; because &quot;this.model&quot; is null
+	at pl.edu.pjatk.MPRprojekt.model.Car.setIndex(Car.java:72)
+	at pl.edu.pjatk.MPRprojekt.model.Car.setBrand(Car.java:48)
+	at pl.edu.pjatk.MPRprojekt.model.Car.&lt;init&gt;(Car.java:26)
+	at pl.edu.pjatk.MPRprojekt.service.CarService.&lt;init&gt;(CarService.java:23)
+	at pl.edu.pjatk.MPRprojekt.service.CarServiceTest.setUp(CarServiceTest.java:25)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+</failure>
+  </testcase>
+  <testcase name="testGetCarById()" classname="pl.edu.pjatk.MPRprojekt.service.CarServiceTest" time="0.003">
+    <failure message="java.lang.NullPointerException: Cannot invoke &quot;String.length()&quot; because &quot;this.model&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;String.length()&quot; because &quot;this.model&quot; is null
+	at pl.edu.pjatk.MPRprojekt.model.Car.setIndex(Car.java:72)
+	at pl.edu.pjatk.MPRprojekt.model.Car.setBrand(Car.java:48)
+	at pl.edu.pjatk.MPRprojekt.model.Car.&lt;init&gt;(Car.java:26)
+	at pl.edu.pjatk.MPRprojekt.service.CarService.&lt;init&gt;(CarService.java:23)
+	at pl.edu.pjatk.MPRprojekt.service.CarServiceTest.setUp(CarServiceTest.java:25)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+</failure>
+  </testcase>
+  <testcase name="testAddCar()" classname="pl.edu.pjatk.MPRprojekt.service.CarServiceTest" time="0.003">
+    <failure message="java.lang.NullPointerException: Cannot invoke &quot;String.length()&quot; because &quot;this.model&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke &quot;String.length()&quot; because &quot;this.model&quot; is null
+	at pl.edu.pjatk.MPRprojekt.model.Car.setIndex(Car.java:72)
+	at pl.edu.pjatk.MPRprojekt.model.Car.setBrand(Car.java:48)
+	at pl.edu.pjatk.MPRprojekt.model.Car.&lt;init&gt;(Car.java:26)
+	at pl.edu.pjatk.MPRprojekt.service.CarService.&lt;init&gt;(CarService.java:23)
+	at pl.edu.pjatk.MPRprojekt.service.CarServiceTest.setUp(CarServiceTest.java:25)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+</failure>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\Nauka\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.14.19\154da3a65b4f4a909d3e5bdec55d1b2b4cbb6ce1\byte-buddy-agent-1.14.19.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>
