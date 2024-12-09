@@ -1,15 +1,21 @@
 package pl.edu.pjatk.MPRprojekt.controllers;
 
+import jakarta.annotation.Resource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import pl.edu.pjatk.MPRprojekt.model.Car;
 import pl.edu.pjatk.MPRprojekt.service.CarService;
 
+import java.io.File;
 import java.util.List;
 import java.util.Optional;
+
 
 @RestController
 public class     MyRestController {
@@ -41,7 +47,6 @@ public class     MyRestController {
 
     @GetMapping("car/{id}")
     public ResponseEntity<Car> getCarById(@PathVariable Long id) {
-        this.carService.getCarById(id);
         return new ResponseEntity<>(this.carService.getCarById(id), HttpStatus.OK);
     }
 
@@ -63,4 +68,13 @@ public class     MyRestController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @GetMapping("car/{id}/pdf")
+    public ResponseEntity<FileSystemResource> getCarByIdToPdf(@PathVariable Long id) {
+        String filePath = this.carService.getCarByIdToPdf(id);
+        FileSystemResource file = new FileSystemResource(new File(filePath));
+        return ResponseEntity.ok()
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + file.getFilename() + "\"")
+                .contentType(MediaType.APPLICATION_PDF)
+                .body(file);
+    }
 }
