@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Update Car</title>
+</head>
+<body>
+<h1>Update Car</h1>
+<form action="#" th:action="@{/view/car/update}" th:object="${car}" method="post">
+    <input type="hidden" th:field="*{id}" />
+    <label>Brand: <input type="text" th:field="*{brand}" /></label><br>
+    <label>Model: <input type="text" th:field="*{model}" /></label><br>
+    <button type="submit">Update</button>
+</form>
+<a href="/view/car/all">Back to list</a>
+</body>
+</html>

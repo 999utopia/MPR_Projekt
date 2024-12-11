@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Delete Car</title>
+</head>
+<body>
+<h1>Delete Car</h1>
+<form action="#" th:action="@{/view/car/delete}" method="post">
+    <input type="hidden" th:value="${car.id}" name="id" />
+    <p>Are you sure you want to delete car with ID <span th:text="${car.id}"></span>?</p>
+    <button type="submit">Delete</button>
+</form>
+<a href="/view/car/all">Back to list</a>
+</body>
+</html>

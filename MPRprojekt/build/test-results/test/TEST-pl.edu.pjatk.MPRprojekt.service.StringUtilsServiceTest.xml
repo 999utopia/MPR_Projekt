@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="pl.edu.pjatk.MPRprojekt.service.StringUtilsServiceTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-12-09T04:18:08" hostname="DESKTOP-6P4U75M" time="0.105">
-  <properties/>
-  <testcase name="testToCamelCase()" classname="pl.edu.pjatk.MPRprojekt.service.StringUtilsServiceTest" time="0.101"/>
-  <testcase name="testToUpperCase()" classname="pl.edu.pjatk.MPRprojekt.service.StringUtilsServiceTest" time="0.002"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
